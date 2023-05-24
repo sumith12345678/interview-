@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="example" method="post">
+        {% csrf_token %}
+        <br><br>
+        <input type="node_id" name="search">
+     
+           
+        <button type="submit"><i class="fa fa-search">Submit</i></button>
+      </form>
+      {% for i in nodes %}
+      Binary_Tree: {{i.name}}
+      <br>
+      Binary_ID: {{i.node_id}}
+      <br>
+      Binary_Parent_Name: {{i.parent}}
+      <br>
+      No:Of Left_Child: {{i.left_child}}
+      <br>
+      No:Of Right_Child: {{i.right_child}}   
+      {% endfor %}
+</body>
+</html>
+
+

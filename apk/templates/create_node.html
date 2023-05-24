@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Node</title>
+</head>
+<body style="text-align: center;">
+    <h1>Create Node</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+    <span><a href="{% url 'search' %}">Search Node</a></span>
+    <br><br><a href="{% url 'node_list' %}">Node List</a>
+</body>
+</html>

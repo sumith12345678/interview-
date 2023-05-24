@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<br><br><br>
+<body style="text-align: center;"> 
+    <h1>Node List</h1>
+
+   
+
+    {% for i in nodes %}
+    <li>
+      SL:{{forloop.counter}}
+      Name: {{ i.name }} (ID: {{ i.id }})
+      {% if i.parent %}
+        Parent: {{ i.parent.name }} (ID: {{ i.parent.id }})
+      {% else %}
+        Parent: None
+      {% endif %}
+      {% if i.left_child %}
+        Left Child: {{ i.left_child }}
+      {% else %}
+        Left Child: None
+      {% endif %}
+      {% if i.right_child %}
+        Right Child: {{ i.right_child }} 
+      {% else %}
+        Right Child: None
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>No is found.</li>
+  {% endfor %}
+
+
+
+
+  <br><br><br>
+<a href="{% url 'create_node' %}">Create New Node</a><br><br><span><a href="{% url 'search' %}">Search Node</a></span>
+
+</body>
+</html>
